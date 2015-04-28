@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -36,4 +37,14 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void OnClickMenuNewGame(MenuItem item) {
+        Toast toast = Toast.makeText(this, "New game clicked!", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void OnClickMenuExit(MenuItem item) {
+        finish();
+    }
+
+
 }
