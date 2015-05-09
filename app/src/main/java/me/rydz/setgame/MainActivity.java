@@ -29,20 +29,43 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        boolean isHandled;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch(id) {
+            case R.id.action_newGame:
+                onClickMenuNewGame(item);
+                isHandled = true;
+                break;
+
+           case R.id.action_exit:
+               onClickMenuExit(item);
+                isHandled = true;
+                break;
+
+            case R.id.action_settings:
+                onClickMenuSettings(item);
+                isHandled = true;
+                break;
+
+            default:
+                isHandled =  super.onOptionsItemSelected(item);
         }
 
-        return super.onOptionsItemSelected(item);
+        return isHandled;
     }
-    public void OnClickMenuNewGame(MenuItem item) {
+
+    private void onClickMenuSettings(MenuItem item) {
+        Toast toast = Toast.makeText(this, "Settings clicked!", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+
+    private void onClickMenuNewGame(MenuItem item) {
         Toast toast = Toast.makeText(this, "New game clicked!", Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void OnClickMenuExit(MenuItem item) {
+    private void onClickMenuExit(MenuItem item) {
         finish();
     }
 
