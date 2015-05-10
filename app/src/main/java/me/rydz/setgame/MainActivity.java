@@ -1,9 +1,12 @@
 package me.rydz.setgame;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -13,6 +16,17 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageButton button = (ImageButton) findViewById(R.id.card_0_0);
+        button.setBackgroundResource(R.drawable.c01);
+
+        ImageButton button2 = (ImageButton) findViewById(R.id.card_0_1);
+        button2.setBackgroundResource(R.drawable.c02);
+
+        ImageButton button3 = (ImageButton) findViewById(R.id.card_0_2);
+        button3.setBackgroundResource(R.drawable.c03);
+
+
     }
 
 
