@@ -1,0 +1,6 @@
+<resources>
+    <color name="neutral">#AAAAAA</color>
+    <color name="selected">#4444EE</color>
+    <color name="invalid">#FF0000</color>
+    <color name="valid">#00FF00</color>
+</resources>

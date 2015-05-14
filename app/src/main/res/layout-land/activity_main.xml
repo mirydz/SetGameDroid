@@ -26,7 +26,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_0_0"
                     android:contentDescription="@string/card_0_0"
                     android:cropToPadding="false"
@@ -44,7 +44,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_0_1"
                     android:background="@drawable/cblank"
                     android:clickable="true" />
@@ -60,7 +60,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_0_2"
                     android:clickable="false"
                     android:background="@drawable/cblank" />
@@ -82,7 +82,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_1_0"
                     android:cropToPadding="false"
                     android:clickable="true"
@@ -100,7 +100,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_1_1"
                     android:background="@drawable/cblank"
                     android:clickable="true" />
@@ -116,7 +116,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_1_2"
                     android:clickable="true"
                     android:background="@drawable/cblank" />
@@ -137,7 +137,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_2_0"
                     android:cropToPadding="false"
                     android:clickable="true"
@@ -155,7 +155,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_2_1"
                     android:background="@drawable/cblank"
                     android:clickable="true" />
@@ -171,7 +171,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_2_2"
                     android:clickable="true"
                     android:background="@drawable/cblank" />
@@ -192,7 +192,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_3_0"
                     android:cropToPadding="false"
                     android:clickable="true"
@@ -209,7 +209,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_3_1"
                     android:background="@drawable/cblank"
                     android:clickable="true" />
@@ -225,7 +225,7 @@
 
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/card_3_2"
                     android:clickable="true"
                     android:background="@drawable/cblank" />
