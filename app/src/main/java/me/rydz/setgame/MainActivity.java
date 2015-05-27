@@ -119,11 +119,11 @@ public class MainActivity extends ActionBarActivity {
         file += card.getNumber();
 
 
-        int picId = getResources().getIdentifier(file, "drawable", getApplicationContext().getPackageName());
-        return picId;
+        return getResources().getIdentifier(file, "drawable", getApplicationContext().getPackageName());
     }
 
     private void onCardClicked(View view) {
+        int maxNumberOfCardsSelected = 3;
         Resources res = getResources();
         LinearLayout wrapper = (LinearLayout) view.getParent();
 
@@ -132,28 +132,17 @@ public class MainActivity extends ActionBarActivity {
                 this.selectedCardButtons.add((ImageButton) view);
 
                 wrapper.setBackgroundColor(res.getColor(R.color.selected));
-                if (this.selectedCardButtons.size() == 3) {
-                    //wrapper.setBackgroundColor(res.getColor(R.color.valid));
+                if (this.selectedCardButtons.size() == maxNumberOfCardsSelected) {
                     handleThreeCardsSelected();
                 }
-            } //else
-                //this.handleThreeCardsSelected();
+            }
         } else {
             this.selectedCardButtons.remove((ImageButton) view);
             wrapper.setBackgroundColor(res.getColor(R.color.neutral));
             String size = Integer.toString(this.selectedCardButtons.size());
             Toast toast = Toast.makeText(this, size, Toast.LENGTH_SHORT);
             toast.show();
-            //Toast toast = Toast.makeText(this, "removed from selected", Toast.LENGTH_SHORT);
-            //toast.show();
         }
-
-        //String name = res.getResourceEntryName(view.getId());
-        //LinearLayout wrapper = (LinearLayout) view.getParent();
-        //wrapper.setBackgroundColor(res.getColor(R.color.selected));
-
-        //Toast toast = Toast.makeText(this, "hahah", Toast.LENGTH_SHORT);
-        //toast.show();
 
     }
 
@@ -167,7 +156,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void handleThreeCardsSelected() {
         Toast toast = Toast.makeText(this, "3 cards selected", Toast.LENGTH_SHORT);
-        int color;
+        int delayTime = 300; // in milliseconds
 
         if (this.game.isValidSet()) {
             this.handleValidSet();
@@ -182,7 +171,7 @@ public class MainActivity extends ActionBarActivity {
                         selectedCardButtons.clear();
                     }
                 },
-                300);
+                delayTime);
 
 
         toast.show();
