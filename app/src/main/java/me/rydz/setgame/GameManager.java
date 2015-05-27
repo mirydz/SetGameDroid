@@ -9,34 +9,42 @@ public class GameManager {
 
     private Deck deck;
     private ArrayList<Card> hand;
+    private ArrayList<Card[]> possibleSets;
     private boolean isGameOver;
 
     public void newGame() {
         this.deck = new Deck();
         this.hand = this.deck.getHand();
+        this.possibleSets = fetchPossibleSets(this.hand);
     }
 
     public ArrayList<Card> getHand() {
         return hand;
     }
 
-    public int getNumberOfSets(ArrayList<Card> hand) {
-        int numberOfSets = 0;
-        Card firstCard = hand.get(0);
-        Card secondCard = hand.get(1);
-        Card thirdCard = hand.get(2);
+    public ArrayList<Card[]> fetchPossibleSets(ArrayList<Card> hand) {
+        ArrayList<Card[]> possibleSets = new ArrayList<>();
 
         for (int indexA = 0; indexA < hand.size(); indexA++) {
             for (int indexB = indexA + 1; indexB < hand.size(); indexB++) {
                 for (int indexC = indexB + 1; indexC < hand.size(); indexC++) {
-                    if (isValidSet(hand.get(indexA), hand.get(indexB), hand.get(indexC))) {
-                        numberOfSets++;
+                    Card firstCard = hand.get(indexA);
+                    Card secondCard = hand.get(indexB);
+                    Card thirdCard = hand.get(indexC);
+
+                    if (isValidSet(firstCard, secondCard, thirdCard)) {
+                        Card[] possibleSet = {firstCard, secondCard, thirdCard};
+                        possibleSets.add(possibleSet);
                     }
                 }
             }
         }
 
-        return numberOfSets;
+        return possibleSets;
+    }
+
+    public int getNumberOfPossibleSets() {
+        return this.possibleSets.size();
     }
 
     public boolean isValidSet(ArrayList<Card> selectedCards) {

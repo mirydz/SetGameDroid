@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
             });
         }
 
-        int numberOfSets = game.getNumberOfSets(game.getHand());
+        int numberOfSets = game.getNumberOfPossibleSets();
         String message = "Possible sets in hand: " + numberOfSets;
         Utils.showToast(this, message);
 
@@ -211,7 +211,7 @@ public class MainActivity extends ActionBarActivity {
         this.game.newGame();
         this.populateView();
 
-        int numberOfSets = game.getNumberOfSets(game.getHand());
+        int numberOfSets = game.getNumberOfPossibleSets();
         String message = "Possible sets in hand: " + numberOfSets;
         Utils.showToast(this, message);
     }
