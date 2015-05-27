@@ -55,6 +55,10 @@ public class MainActivity extends ActionBarActivity {
             });
         }
 
+        int numberOfSets = game.getNumberOfSets(game.getHand());
+        String message = "Possible sets in hand: " + numberOfSets;
+        Utils.showToast(this, message);
+
     }
 
     @Override
@@ -178,8 +182,6 @@ public class MainActivity extends ActionBarActivity {
                     }
                 },
                 delayTime);
-
-        Utils.showToast(this, "3 cards selected");
     }
 
     private void handleValidSet() {
@@ -208,10 +210,12 @@ public class MainActivity extends ActionBarActivity {
 
 
     private void onClickMenuNewGame(MenuItem item) {
-        Toast toast = Toast.makeText(this, "New game clicked!", Toast.LENGTH_SHORT);
-        toast.show();
         this.game.newGame();
         this.populateView();
+
+        int numberOfSets = game.getNumberOfSets(game.getHand());
+        String message = "Possible sets in hand: " + numberOfSets;
+        Utils.showToast(this, message);
     }
 
     private void onClickMenuExit(MenuItem item) {

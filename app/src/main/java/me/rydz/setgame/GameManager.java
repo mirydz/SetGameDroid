@@ -20,6 +20,25 @@ public class GameManager {
         return hand;
     }
 
+    public int getNumberOfSets(ArrayList<Card> hand) {
+        int numberOfSets = 0;
+        Card firstCard = hand.get(0);
+        Card secondCard = hand.get(1);
+        Card thirdCard = hand.get(2);
+
+        for (int indexA = 0; indexA < hand.size(); indexA++) {
+            for (int indexB = indexA + 1; indexB < hand.size(); indexB++) {
+                for (int indexC = indexB + 1; indexC < hand.size(); indexC++) {
+                    if (isValidSet(hand.get(indexA), hand.get(indexB), hand.get(indexC))) {
+                        numberOfSets++;
+                    }
+                }
+            }
+        }
+
+        return numberOfSets;
+    }
+
     public boolean isValidSet(ArrayList<Card> selectedCards) {
         int maxSelectedCards = 3;
         if (selectedCards.size() != maxSelectedCards) {
@@ -30,6 +49,10 @@ public class GameManager {
         Card secondCard = selectedCards.get(1);
         Card thirdCard = selectedCards.get(2);
 
+        return isValidSet(firstCard, secondCard, thirdCard);
+    }
+
+    private boolean isValidSet(Card firstCard, Card secondCard, Card thirdCard) {
         if (areSameOrDifferentQuantity(firstCard, secondCard, thirdCard)) {
             if (areSameOrDifferentSymbol(firstCard, secondCard, thirdCard)) {
                 if (areSameOrDifferentShading(firstCard, secondCard, thirdCard)) {
