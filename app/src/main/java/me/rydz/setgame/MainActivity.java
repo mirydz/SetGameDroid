@@ -119,14 +119,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private int resolveFileId(Card card) {
-        String file = "";
-        file += card.getShading().toString().toLowerCase();
-        file += card.getSymbol().toString().toLowerCase();
-        file += card.getColor().toString().toLowerCase();
-        file += card.getNumber();
+        String fileName = card.getShading().toString().toLowerCase()
+                        + card.getSymbol().toString().toLowerCase()
+                        + card.getColor().toString().toLowerCase()
+                        + card.getNumber();
 
-
-        return getResources().getIdentifier(file, "drawable", getApplicationContext().getPackageName());
+        return getResources().getIdentifier(fileName, "drawable", getApplicationContext().getPackageName());
     }
 
     private void onCardClicked(View view) {
