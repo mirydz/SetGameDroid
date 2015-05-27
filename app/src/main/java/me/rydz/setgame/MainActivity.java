@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
 
-    private ArrayList<ImageButton> cardButtons;
-    private ArrayList<ImageButton> selectedCardButtons;
+    private ArrayList<CardButton> cardButtons;
+    private ArrayList<CardButton> selectedCardButtons;
     private GameManager game;
 
     @Override
@@ -31,18 +31,18 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-        cardButtons.add( (ImageButton)findViewById(R.id.card_0_0) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_0_1) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_0_2) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_1_0) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_1_1) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_1_2) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_2_0) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_2_1) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_2_2) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_3_0) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_3_1) );
-        cardButtons.add( (ImageButton)findViewById(R.id.card_3_2) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_0_0) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_0_1) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_0_2) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_1_0) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_1_1) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_1_2) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_2_0) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_2_1) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_2_2) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_3_0) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_3_1) );
+        cardButtons.add( (CardButton)findViewById(R.id.card_3_2) );
 
         this.populateView();
 
@@ -104,8 +104,11 @@ public class MainActivity extends ActionBarActivity {
         ArrayList<Card> hand = game.getHand();
 
         for (int cardIndex = 0; cardIndex < hand.size(); cardIndex++) {
-            int imgFileId = this.resolveFileId(hand.get(cardIndex));
+            CardButton currentCardButton = this.cardButtons.get(cardIndex);
+            Card currentCard = hand.get(cardIndex);
+            int imgFileId = this.resolveFileId(currentCard);
 
+            currentCardButton.setCard(currentCard);
             this.cardButtons.get(cardIndex).setBackgroundResource(imgFileId);
             this.cardButtons.get(cardIndex).invalidate();
         }
@@ -129,19 +132,18 @@ public class MainActivity extends ActionBarActivity {
 
         if ( ! isAlreadySelected(view)  ) {
             if (this.isPossibleSelectCard()) {
-                this.selectedCardButtons.add((ImageButton) view);
-
+                this.selectedCardButtons.add((CardButton) view);
+                Utils.showToast(this, view.toString());
                 wrapper.setBackgroundColor(res.getColor(R.color.selected));
                 if (this.selectedCardButtons.size() == maxNumberOfCardsSelected) {
                     handleThreeCardsSelected();
                 }
             }
         } else {
-            this.selectedCardButtons.remove((ImageButton) view);
+            this.selectedCardButtons.remove(view);
             wrapper.setBackgroundColor(res.getColor(R.color.neutral));
             String size = Integer.toString(this.selectedCardButtons.size());
-            Toast toast = Toast.makeText(this, size, Toast.LENGTH_SHORT);
-            toast.show();
+            Utils.showToast(this, size);
         }
 
     }
@@ -155,10 +157,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void handleThreeCardsSelected() {
-        Toast toast = Toast.makeText(this, "3 cards selected", Toast.LENGTH_SHORT);
-        int delayTime = 300; // in milliseconds
 
-        if (this.game.isValidSet()) {
+        int delayTime = 300; // in milliseconds
+        ArrayList<Card> selectedCards = new ArrayList<>();
+        for (CardButton cardButton : this.selectedCardButtons ) {
+            selectedCards.add(cardButton.getCard());
+        }
+
+        if (this.game.isValidSet(selectedCards)) {
             this.handleValidSet();
             highlightSelection(R.color.valid);
         } else
@@ -173,8 +179,7 @@ public class MainActivity extends ActionBarActivity {
                 },
                 delayTime);
 
-
-        toast.show();
+        Utils.showToast(this, "3 cards selected");
     }
 
     private void handleValidSet() {

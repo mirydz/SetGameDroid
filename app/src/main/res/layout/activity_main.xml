@@ -24,7 +24,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_0_0_background">
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_0_0"
@@ -42,7 +42,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_0_1_background">
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_0_1"
@@ -58,7 +58,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_0_2_background">
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_0_2"
@@ -80,7 +80,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_1_0_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_1_0"
@@ -98,7 +98,7 @@
                 android:id="@+id/card_1_1_background"
                 android:clickable="false">
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_1_1"
@@ -114,7 +114,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_1_2_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_1_2"
@@ -135,7 +135,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_2_0_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_2_0"
@@ -153,7 +153,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_2_1_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_2_1"
@@ -169,7 +169,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_2_2_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_2_2"
@@ -190,7 +190,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_3_0_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_3_0"
@@ -207,7 +207,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_3_1_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_3_1"
@@ -223,7 +223,7 @@
                 android:padding="5dp"
                 android:id="@+id/card_3_2_background" >
 
-                <ImageButton
+                <me.rydz.setgame.CardButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/card_3_2"
