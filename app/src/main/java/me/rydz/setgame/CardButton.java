@@ -49,8 +49,7 @@ public class CardButton extends ImageButton {
 
     @Override
     public String toString() {
-        return String.valueOf(this.card.getNumber()) + this.card.getColor() + this.card.getShading()
-                            + this.card.getSymbol();
+        return this.card.toString();
     }
 
 }

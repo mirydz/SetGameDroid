@@ -1,6 +1,9 @@
 package me.rydz.setgame;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import static me.rydz.setgame.Utils.Color;
 import static me.rydz.setgame.Utils.Shading;
 import static me.rydz.setgame.Utils.Symbol;
@@ -34,6 +37,7 @@ public class GameManager {
 
                     if (isValidSet(firstCard, secondCard, thirdCard)) {
                         Card[] possibleSet = {firstCard, secondCard, thirdCard};
+                        Arrays.sort(possibleSet);
                         possibleSets.add(possibleSet);
                     }
                 }
@@ -48,16 +52,17 @@ public class GameManager {
     }
 
     public boolean isValidSet(ArrayList<Card> selectedCards) {
-        int maxSelectedCards = 3;
-        if (selectedCards.size() != maxSelectedCards) {
-            return false;
+        Card[] selectedCardsArr = new Card[selectedCards.size()];
+        selectedCardsArr = selectedCards.toArray(selectedCardsArr);
+        Arrays.sort(selectedCardsArr);
+
+        boolean isFoundMatch = false;
+        for (Card[] possibleSet : this.possibleSets) {
+            if (Arrays.equals(possibleSet, selectedCardsArr)) {
+                isFoundMatch = true;
+            }
         }
-
-        Card firstCard = selectedCards.get(0);
-        Card secondCard = selectedCards.get(1);
-        Card thirdCard = selectedCards.get(2);
-
-        return isValidSet(firstCard, secondCard, thirdCard);
+        return isFoundMatch;
     }
 
     private boolean isValidSet(Card firstCard, Card secondCard, Card thirdCard) {

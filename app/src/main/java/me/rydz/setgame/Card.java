@@ -4,7 +4,7 @@ import static me.rydz.setgame.Utils.Color;
 import static me.rydz.setgame.Utils.Shading;
 import static me.rydz.setgame.Utils.Symbol;
 
-public class Card {
+public class Card implements Comparable {
 
     private int number;
     private Symbol symbol;
@@ -37,5 +37,16 @@ public class Card {
 
     public Shading getShading() {
         return shading;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.getNumber()) + this.getColor() + this.getShading()
+                            + this.getSymbol();
+    }
+
+    @Override
+    public int compareTo(Object another) {
+        return this.toString().compareTo(another.toString());
     }
 }
