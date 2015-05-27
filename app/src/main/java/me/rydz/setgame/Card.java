@@ -1,10 +1,8 @@
 package me.rydz.setgame;
 
-enum Number { ONE, TWO, THREE}
-enum Symbol { DIAMOND, SQUIGGLE, OVAL }
-enum Shading { SOLID, STRIPED, OPEN }
-enum Color { RED, GREEN, PURPLE }
-
+import static me.rydz.setgame.Utils.Color;
+import static me.rydz.setgame.Utils.Shading;
+import static me.rydz.setgame.Utils.Symbol;
 
 public class Card {
 

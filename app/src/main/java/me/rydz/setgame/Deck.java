@@ -2,6 +2,9 @@ package me.rydz.setgame;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import static me.rydz.setgame.Utils.Color;
+import static me.rydz.setgame.Utils.Shading;
+import static me.rydz.setgame.Utils.Symbol;
 
 public class Deck {
     private ArrayList<Card> allCards;
