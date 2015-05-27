@@ -1,6 +1,9 @@
 package me.rydz.setgame;
 
 import java.util.ArrayList;
+import static me.rydz.setgame.Utils.Color;
+import static me.rydz.setgame.Utils.Shading;
+import static me.rydz.setgame.Utils.Symbol;
 
 public class GameManager {
 
@@ -16,7 +19,6 @@ public class GameManager {
     public ArrayList<Card> getHand() {
         return hand;
     }
-
 
     public boolean isValidSet(ArrayList<Card> selectedCards) {
         int maxSelectedCards = 3;
@@ -40,21 +42,38 @@ public class GameManager {
         return false;
     }
 
-    private boolean areSameOrDifferentColor(Card a, Card b, Card c) {
-        return false;
+    //<editor-fold desc="Property Comparisons">
+    private boolean areSameOrDifferentColor(Card cardA, Card cardB, Card cardC) {
+        return areSameOrDifferent(cardA.getColor(), cardB.getColor(), cardC.getColor());
     }
 
-    private boolean areSameOrDifferentShading(Card a, Card b, Card c) {
-        return false;
+    private boolean areSameOrDifferentShading(Card cardA, Card cardB, Card cardC) {
+        return areSameOrDifferent(cardA.getShading(), cardB.getShading(), cardC.getShading());
     }
 
-    private boolean areSameOrDifferentSymbol(Card a, Card b, Card c) {
-        return false;
+    private boolean areSameOrDifferentSymbol(Card cardA, Card cardB, Card cardC) {
+        return areSameOrDifferent(cardA.getSymbol(), cardB.getSymbol(), cardC.getSymbol());
     }
 
-    private boolean areSameOrDifferentQuantity(Card a, Card b, Card c) {
-        return false;
+    private boolean areSameOrDifferentQuantity(Card cardA, Card cardB, Card cardC) {
+        return areSameOrDifferent(cardA.getNumber(), cardB.getNumber(), cardC.getNumber()) ;
     }
 
+    private boolean areSameOrDifferent(Object propertyA, Object propertyB, Object propertyC) {
+        return areSame(propertyA, propertyB, propertyC) || areDifferent(propertyA, propertyB, propertyC);
+    }
+
+    private boolean areSame(Object propertyA, Object propertyB, Object propertyC) {
+        boolean result = propertyA.equals(propertyB) && propertyB.equals(propertyC)
+                         && propertyA.equals(propertyC);
+        return result;
+    }
+
+    private boolean areDifferent(Object propertyA, Object propertyB, Object propertyC) {
+        boolean result = !propertyA.equals(propertyB) && !propertyB.equals(propertyC)
+                && !propertyA.equals(propertyC);
+        return result;
+    }
+    //</editor-fold>
 
 }
