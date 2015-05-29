@@ -17,9 +17,13 @@ public class GameManager {
     private boolean isGameOver;
 
     public void newGame() {
+        final int minNumberOfPossibleSets = 4;
         this.deck = new Deck();
-        this.hand = this.deck.getHand();
-        this.possibleSets = fetchPossibleSets(this.hand);
+        do {
+            this.hand = this.deck.getHand();
+            this.possibleSets = fetchPossibleSets(this.hand);
+        } while (this.getNumberOfPossibleSets() < minNumberOfPossibleSets);
+
         this.identifiedSets = new ArrayList<>();
     }
 
