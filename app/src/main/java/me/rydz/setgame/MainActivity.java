@@ -135,7 +135,7 @@ public class MainActivity extends ActionBarActivity {
         if ( ! isAlreadySelected(view)  ) {
             if (this.isPossibleSelectCard()) {
                 this.selectedCardButtons.add((CardButton) view);
-                Utils.showToast(this, view.toString());
+                //Utils.showToast(this, view.toString());
                 wrapper.setBackgroundColor(res.getColor(R.color.selected));
                 if (this.selectedCardButtons.size() == maxNumberOfCardsSelected) {
                     handleThreeCardsSelected();
@@ -144,8 +144,6 @@ public class MainActivity extends ActionBarActivity {
         } else {
             this.selectedCardButtons.remove(view);
             wrapper.setBackgroundColor(res.getColor(R.color.neutral));
-            String size = Integer.toString(this.selectedCardButtons.size());
-            Utils.showToast(this, size);
         }
 
     }
@@ -167,6 +165,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         if (this.game.isValidSet(selectedCards)) {
+            if ( ! this.game.isAlreadyIdentifiedSet(selectedCards)) {
+                Utils.showToast(this, "It's a set!");
+            } else {
+                Utils.showToast(this, "You already found this set, remember?");
+            }
             this.handleValidSet();
             highlightSelection(R.color.valid);
         } else

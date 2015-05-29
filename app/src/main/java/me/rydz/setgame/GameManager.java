@@ -13,12 +13,14 @@ public class GameManager {
     private Deck deck;
     private ArrayList<Card> hand;
     private ArrayList<Card[]> possibleSets;
+    private ArrayList<Card[]> identifiedSets;
     private boolean isGameOver;
 
     public void newGame() {
         this.deck = new Deck();
         this.hand = this.deck.getHand();
         this.possibleSets = fetchPossibleSets(this.hand);
+        this.identifiedSets = new ArrayList<>();
     }
 
     public ArrayList<Card> getHand() {
@@ -63,6 +65,21 @@ public class GameManager {
             }
         }
         return isFoundMatch;
+    }
+
+    public boolean isAlreadyIdentifiedSet(ArrayList<Card> selectedCards) {
+        Card[] selectedCardsArr = new Card[selectedCards.size()];
+        selectedCardsArr = selectedCards.toArray(selectedCardsArr);
+        Arrays.sort(selectedCardsArr);
+
+        for (Card[] identifiedSet : this.identifiedSets) {
+            if(Arrays.equals(identifiedSet, selectedCardsArr))
+                return true;
+        }
+
+        this.identifiedSets.add(selectedCardsArr);
+        return false;
+
     }
 
     private boolean isValidSet(Card firstCard, Card secondCard, Card thirdCard) {
