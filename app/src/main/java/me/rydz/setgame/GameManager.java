@@ -56,6 +56,9 @@ public class GameManager {
     public int getNumberOfPossibleSets() {
         return this.possibleSets.size();
     }
+    public int getNumberOfIdentifiedSets() {
+        return this.identifiedSets.size();
+    }
 
     public boolean isValidSet(ArrayList<Card> selectedCards) {
         Card[] selectedCardsArr = new Card[selectedCards.size()];

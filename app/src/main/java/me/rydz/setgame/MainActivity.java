@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class MainActivity extends ActionBarActivity {
     private ArrayList<CardButton> cardButtons;
     private ArrayList<CardButton> selectedCardButtons;
     private GameManager game;
+    private TextView numberOfSetsIdentified;
+    private TextView numberOfPossibleSets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,11 @@ public class MainActivity extends ActionBarActivity {
         this.game = new GameManager();
         game.newGame();
 
+        this.numberOfSetsIdentified = (TextView)findViewById(R.id.sets_found_number);
+        this.numberOfPossibleSets = (TextView)findViewById(R.id.sets_possible_number);
 
+        this.numberOfSetsIdentified.setText(Integer.toString(this.game.getNumberOfIdentifiedSets()));
+        this.numberOfPossibleSets.setText(Integer.toString(this.game.getNumberOfPossibleSets()));
 
         cardButtons.add( (CardButton)findViewById(R.id.card_0_0) );
         cardButtons.add( (CardButton)findViewById(R.id.card_0_1) );
@@ -54,10 +61,6 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
         }
-
-        int numberOfSets = game.getNumberOfPossibleSets();
-        String message = "Possible sets in hand: " + numberOfSets;
-        Utils.showToast(this, message);
 
     }
 
@@ -186,7 +189,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void handleValidSet() {
-
+        this.numberOfSetsIdentified.setText(Integer.toString(this.game.getNumberOfIdentifiedSets()));
     }
 
     private void highlightSelection(int colorId) {
@@ -214,9 +217,8 @@ public class MainActivity extends ActionBarActivity {
         this.game.newGame();
         this.populateView();
 
-        int numberOfSets = game.getNumberOfPossibleSets();
-        String message = "Possible sets in hand: " + numberOfSets;
-        Utils.showToast(this, message);
+        this.numberOfSetsIdentified.setText(Integer.toString(this.game.getNumberOfIdentifiedSets()));
+        this.numberOfPossibleSets.setText(Integer.toString(this.game.getNumberOfPossibleSets()));
     }
 
     private void onClickMenuExit(MenuItem item) {
