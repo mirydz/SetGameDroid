@@ -234,10 +234,6 @@
 
         <TableRow
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"></TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
             <LinearLayout
@@ -250,25 +246,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sets found: "
-                    android:id="@+id/sets_found_info" />
+                    android:text="@string/sets_found"
+                    android:id="@+id/sets_found_info"
+                    android:layout_marginRight="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_number_of_sets_found"
                     android:id="@+id/sets_found_number" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" / "
+                    android:text="@string/sets_identified_sets_possible_separator"
                     android:id="@+id/sets_number_separator" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="X"
+                    android:text="@string/default_number_of_possible_sets"
                     android:id="@+id/sets_possible_number" />
 
             </LinearLayout>

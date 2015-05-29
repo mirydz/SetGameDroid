@@ -6,4 +6,8 @@
     <string name="action_exit">Exit</string>
     <string name="action_newGame">New game</string>
     <string name="card_0_0">Card 0 0</string>
+    <string name="sets_found">Sets found: </string>
+    <string name="default_number_of_sets_found">0</string>
+    <string name="sets_identified_sets_possible_separator"> / </string>
+    <string name="default_number_of_possible_sets">0</string>
 </resources>
