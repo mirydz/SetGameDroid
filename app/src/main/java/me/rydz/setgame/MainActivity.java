@@ -161,7 +161,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void handleThreeCardsSelected() {
 
-        int delayTime = 300; // in milliseconds
+        int delayTime = 1000; // in milliseconds
         ArrayList<Card> selectedCards = new ArrayList<>();
         for (CardButton cardButton : this.selectedCardButtons ) {
             selectedCards.add(cardButton.getCard());
@@ -175,9 +175,11 @@ public class MainActivity extends ActionBarActivity {
             }
             this.handleValidSet();
             highlightSelection(R.color.valid);
-        } else
+        } else {
+            String errorMsg = this.game.getMessageForInvalidSet(selectedCards);
             highlightSelection(R.color.invalid);
-
+            Utils.showToast(this, errorMsg, 6000);
+        }
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {

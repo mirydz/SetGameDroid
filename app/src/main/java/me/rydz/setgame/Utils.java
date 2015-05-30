@@ -13,4 +13,9 @@ public class Utils {
         toast.show();
     }
 
+    public static void showToast(Context context, String text, int length) {
+        Toast toast = Toast.makeText(context, text, length);
+        toast.show();
+    }
+
 }

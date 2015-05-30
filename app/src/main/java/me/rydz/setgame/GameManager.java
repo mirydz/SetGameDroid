@@ -1,12 +1,7 @@
 package me.rydz.setgame;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import static me.rydz.setgame.Utils.Color;
-import static me.rydz.setgame.Utils.Shading;
-import static me.rydz.setgame.Utils.Symbol;
 
 public class GameManager {
 
@@ -87,6 +82,65 @@ public class GameManager {
         this.identifiedSets.add(selectedCardsArr);
         return false;
 
+    }
+
+
+    public String getMessageForInvalidSet(ArrayList<Card> selectedCards) {
+        StringBuilder messageBuilder = new StringBuilder();
+        Card firstCard = selectedCards.get(0);
+        Card secondCard = selectedCards.get(1);
+        Card thirdCard = selectedCards.get(2);
+
+        if ( ! areSameOrDifferentQuantity(firstCard, secondCard, thirdCard)) {
+            messageBuilder.append("Wrong quantity: ");
+            messageBuilder.append(Integer.toString(firstCard.getNumber()));
+            messageBuilder.append(", ");
+            messageBuilder.append(Integer.toString(secondCard.getNumber()));
+            messageBuilder.append(" and ");
+            messageBuilder.append(Integer.toString(thirdCard.getNumber()));
+            messageBuilder.append('\n');
+            messageBuilder.append("Quantity must be all the same or all different!");
+            messageBuilder.append("\n\n");
+
+        }
+        if ( ! areSameOrDifferentSymbol(firstCard, secondCard, thirdCard)) {
+            messageBuilder.append("Wrong symbol: ");
+            messageBuilder.append(firstCard.getSymbol().toString());
+            messageBuilder.append(", ");
+            messageBuilder.append(secondCard.getSymbol().toString());
+            messageBuilder.append(" and ");
+            messageBuilder.append(thirdCard.getSymbol().toString());
+            messageBuilder.append('\n');
+            messageBuilder.append("Symbols must be all the same or all different!");
+            messageBuilder.append("\n\n");
+        }
+        if ( ! areSameOrDifferentColor(firstCard, secondCard, thirdCard)) {
+            messageBuilder.append("Wrong color: ");
+            messageBuilder.append(firstCard.getColor().toString());
+            messageBuilder.append(", ");
+            messageBuilder.append(secondCard.getColor().toString());
+            messageBuilder.append(" and ");
+            messageBuilder.append(thirdCard.getColor().toString());
+            messageBuilder.append('\n');
+            messageBuilder.append("Colors must be all the same or all different!");
+            messageBuilder.append("\n\n");
+        }
+        if ( ! areSameOrDifferentShading(firstCard, secondCard, thirdCard)) {
+            messageBuilder.append("Wrong shading: ");
+            messageBuilder.append(firstCard.getShading().toString());
+            messageBuilder.append(", ");
+            messageBuilder.append(secondCard.getShading().toString());
+            messageBuilder.append(" and ");
+            messageBuilder.append(thirdCard.getShading().toString());
+            messageBuilder.append('\n');
+            messageBuilder.append("Shading must be all the same or all different!");
+        }
+
+
+
+
+
+        return messageBuilder.toString();
     }
 
     private boolean isValidSet(Card firstCard, Card secondCard, Card thirdCard) {
