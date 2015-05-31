@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
     private GameManager game;
     private TextView numberOfSetsIdentified;
     private TextView numberOfPossibleSets;
+    private Button hintButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,14 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
         }
+
+        this.hintButton = (Button)findViewById(R.id.hint_button);
+        hintButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickHintButton(v);
+            }
+        });
 
     }
 
@@ -166,9 +176,11 @@ public class MainActivity extends ActionBarActivity {
         for (CardButton cardButton : this.selectedCardButtons ) {
             selectedCards.add(cardButton.getCard());
         }
+        Object[] sc = this.selectedCardButtons.toArray();
 
         if (this.game.isValidSet(selectedCards)) {
             if ( ! this.game.isAlreadyIdentifiedSet(selectedCards)) {
+                this.game.markAsIdentifiedSet(selectedCards);
                 Utils.showToast(this, "It's a set!");
             } else {
                 Utils.showToast(this, "You already found this set, remember?");
@@ -214,6 +226,19 @@ public class MainActivity extends ActionBarActivity {
         toast.show();
     }
 
+    private void onClickHintButton(View hintButton) {
+        Card[] set = this.game.getUnidentifiedSet();
+        if (set.length > 0) {
+            StringBuilder msg = new StringBuilder();
+            msg.append(set[0].toString());
+            msg.append('\n');
+            msg.append(set[1].toString());
+            msg.append('\n');
+            msg.append(set[2].toString());
+
+            Utils.showToast(this, msg.toString(), 10000);
+        }
+    }
 
     private void onClickMenuNewGame(MenuItem item) {
         this.game.newGame();

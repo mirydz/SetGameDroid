@@ -10,4 +10,5 @@
     <string name="default_number_of_sets_found">0</string>
     <string name="sets_identified_sets_possible_separator"> / </string>
     <string name="default_number_of_possible_sets">0</string>
+    <string name="hint_button_text">Hint</string>
 </resources>

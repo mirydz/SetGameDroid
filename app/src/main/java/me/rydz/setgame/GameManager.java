@@ -79,11 +79,16 @@ public class GameManager {
                 return true;
         }
 
-        this.identifiedSets.add(selectedCardsArr);
         return false;
 
     }
 
+    public void markAsIdentifiedSet(ArrayList<Card> selectedCards) {
+        Card[] selectedCardsArr = new Card[selectedCards.size()];
+        selectedCardsArr = selectedCards.toArray(selectedCardsArr);
+
+        this.markSetAsIdentified(selectedCardsArr);
+    }
 
     public String getMessageForInvalidSet(ArrayList<Card> selectedCards) {
         StringBuilder messageBuilder = new StringBuilder();
@@ -141,6 +146,22 @@ public class GameManager {
 
 
         return messageBuilder.toString();
+    }
+
+    public Card[] getUnidentifiedSet() {
+        for (Card[] possibleSet : this.possibleSets) {
+            ArrayList<Card> ps = new ArrayList<>(Arrays.asList(possibleSet));
+            if (! isAlreadyIdentifiedSet(ps)) {
+                return possibleSet;
+            }
+
+        }
+        return new Card[0];
+    }
+
+    private void markSetAsIdentified(Card[] selectedCards) {
+        Arrays.sort(selectedCards);
+        this.identifiedSets.add(selectedCards);
     }
 
     private boolean isValidSet(Card firstCard, Card secondCard, Card thirdCard) {
