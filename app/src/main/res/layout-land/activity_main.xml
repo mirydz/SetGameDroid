@@ -5,281 +5,289 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TableLayout
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="450dp"
+        android:layout_height="fill_parent">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#9cf"
+            android:stretchColumns="0,1,2">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_0_0_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_0_0"
+                        android:contentDescription="@string/card_0_0"
+                        android:cropToPadding="false"
+                        android:clickable="true"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_0_1_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_0_1"
+                        android:background="@drawable/cblank"
+                        android:clickable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_0_2_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_0_2"
+                        android:clickable="false"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_1_0_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_1_0"
+                        android:cropToPadding="false"
+                        android:clickable="true"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_1_1_background"
+                    android:clickable="false">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_1_1"
+                        android:background="@drawable/cblank"
+                        android:clickable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_1_2_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_1_2"
+                        android:clickable="true"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_2_0_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_2_0"
+                        android:cropToPadding="false"
+                        android:clickable="true"
+                        android:background="@drawable/cblank"
+                        android:longClickable="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_2_1_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_2_1"
+                        android:background="@drawable/cblank"
+                        android:clickable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_2_2_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_2_2"
+                        android:clickable="true"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_3_0_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_3_0"
+                        android:cropToPadding="false"
+                        android:clickable="true"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_3_1_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_3_1"
+                        android:background="@drawable/cblank"
+                        android:clickable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#aaa"
+                    android:padding="5dp"
+                    android:id="@+id/card_3_2_background">
+
+                    <me.rydz.setgame.CardButton
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:id="@+id/card_3_2"
+                        android:clickable="true"
+                        android:background="@drawable/cblank" />
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#9cf"
-        android:stretchColumns="0,1,2"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="false"
+        android:orientation="vertical">
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:layout_marginBottom="10dp">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_0_0_background">
+                android:text="@string/sets_found"
+                android:id="@+id/sets_found_info"
+                android:layout_marginRight="5dp"/>
 
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_0_0"
-                    android:contentDescription="@string/card_0_0"
-                    android:cropToPadding="false"
-                    android:clickable="true"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_0_1_background">
+                android:text="@string/default_number_of_sets_found"
+                android:id="@+id/sets_found_number" />
 
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_0_1"
-                    android:background="@drawable/cblank"
-                    android:clickable="true" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_0_2_background">
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_0_2"
-                    android:clickable="false"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-
-            <LinearLayout
-                android:orientation="vertical"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_1_0_background" >
+                android:text="@string/sets_identified_sets_possible_separator"
+                android:id="@+id/sets_number_separator" />
 
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_1_0"
-                    android:cropToPadding="false"
-                    android:clickable="true"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_1_1_background"
-                android:clickable="false">
+                android:text="@string/default_number_of_possible_sets"
+                android:id="@+id/sets_possible_number" />
 
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_1_1"
-                    android:background="@drawable/cblank"
-                    android:clickable="true" />
-            </LinearLayout>
+        </LinearLayout>
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_1_2_background" >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_button_text"
+            android:id="@+id/hint_button"
+            android:layout_gravity="right" />
 
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_1_2"
-                    android:clickable="true"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_2_0_background" >
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_2_0"
-                    android:cropToPadding="false"
-                    android:clickable="true"
-                    android:background="@drawable/cblank"
-                    android:longClickable="false" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_2_1_background" >
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_2_1"
-                    android:background="@drawable/cblank"
-                    android:clickable="true" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_2_2_background" >
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_2_2"
-                    android:clickable="true"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_3_0_background" >
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_3_0"
-                    android:cropToPadding="false"
-                    android:clickable="true"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_3_1_background" >
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_3_1"
-                    android:background="@drawable/cblank"
-                    android:clickable="true" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#aaa"
-                android:padding="5dp"
-                android:id="@+id/card_3_2_background" >
-
-                <me.rydz.setgame.CardButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/card_3_2"
-                    android:clickable="true"
-                    android:background="@drawable/cblank" />
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_column="0">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sets_found"
-                    android:id="@+id/sets_found_info"
-                    android:layout_marginRight="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/default_number_of_sets_found"
-                    android:id="@+id/sets_found_number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sets_identified_sets_possible_separator"
-                    android:id="@+id/sets_number_separator" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/default_number_of_possible_sets"
-                    android:id="@+id/sets_possible_number" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hint_button_text"
-                android:id="@+id/hint_button"
-                android:layout_column="0" />
-        </TableRow>
-    </TableLayout>
+    </LinearLayout>
 </RelativeLayout>
