@@ -29,10 +29,10 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.game = SetGameApplication.getInstance().getGame();
+
         this.cardButtons = new ArrayList<>();
         this.selectedCardButtons = new ArrayList<>();
-        this.game = new GameManager();
-        game.newGame();
 
         this.numberOfSetsIdentified = (TextView)findViewById(R.id.sets_found_number);
         this.numberOfPossibleSets = (TextView)findViewById(R.id.sets_possible_number);
@@ -242,6 +242,8 @@ public class MainActivity extends ActionBarActivity {
 
     private void onClickMenuNewGame(MenuItem item) {
         this.game.newGame();
+        SetGameApplication.getInstance().setGame(this.game);
+
         this.populateView();
 
         this.numberOfSetsIdentified.setText(Integer.toString(this.game.getNumberOfIdentifiedSets()));
